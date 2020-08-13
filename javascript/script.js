@@ -11,6 +11,7 @@ let scoreRetard = document.querySelector('.scoreR');
 let retardChoice = document.querySelector('.retardChoice');
 let computerChoice = document.querySelector('.computerChoice');
 let winLoseMessage = document.querySelector('.winLoseMessage');
+let audio = document.getElementById('myaudio')
 let scoreR = 0;
 let scoreC = 0;
 
@@ -57,6 +58,7 @@ function lose(playerSelection, computerSelection) {
             scoreR = 0;
             scoreComputer.innerHTML = scoreC;
             scoreRetard.innerHTML = 0;
+            audio.play();
         }
     retardChoice.textContent = "You've made the dumb decission to choose: " + playerSelection;
     computerChoice.textContent = "Computer pick is: " + computerSelection;
@@ -131,12 +133,3 @@ function playRound(playerSelection, computerSelection) {
         }
 
     }
-
-function ranald(){
-    var luck = document.createElement("img");
-    luck.setAttribute("src", "/images/ranald.png");
-    luck.setAttribute("width", "64px");
-    luck.setAttribute("height", "150px");
-    luck.setAttribute("alt", "Ranald's Gift");
-    document.getElementById("winLoseMessage").appendChild(luck)
-}
